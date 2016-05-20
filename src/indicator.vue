@@ -1,20 +1,25 @@
 <template>
-  <div class="kebab-indicator" v-if="rendered" v-show="visible" transition="pop-bounce" :style="{ 'padding': text ? '20px' : '10px' }">
-    <span class="kebab-indicator-spin"></span>
-    <span class="kebab-indicator-text" v-show="text">{{ text }}</span>
+  <div class="kebab-indicator" v-show="visible" transition="kebab-indicator" >
+    <div class="kebab-indicator-wrapper" :style="{ 'padding': text ? '20px' : '10px' }">
+      <span class="kebab-indicator-spin"></span>
+      <span class="kebab-indicator-text" v-show="text">{{ text }}</span>
+    </div>
+    <div class="kebab-indicator-mask"></div>
   </div>
 </template>
 
 <style>
   @component-namespace kebab {
     @component indicator {
-      position: fixed 50% * * 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 5px;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      box-sizing: border-box;
-      text-align: center;
+      @descendent wrapper {
+        position: fixed 50% * * 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        box-sizing: border-box;
+        text-align: center;
+      }
 
       @descendent text {
         display: block;
@@ -31,6 +36,13 @@
         background-size: 100%;
         animation: indicator-spin 1s steps(12,end) infinite;
       }
+
+      @descendent mask {
+        position: fixed 0 * * 0;
+        size: 100%;
+        opacity: 0;
+        background: transparent;
+      }
     }
   }
 
@@ -40,39 +52,26 @@
     }
   }
 
-  .pop-bounce-transition {
-    transition: opacity .3s linear;
+  .kebab-indicator-transition {
+    transition: opacity .2s linear;
   }
 
-  .pop-bounce-enter,
-  .pop-bounce-leave {
+  .kebab-indicator-enter,
+  .kebab-indicator-leave {
     opacity: 0;
-  }
-
-  .d-modal {
-    position: fixed 0 * * 0;
-    size: 100%;
-    opacity: 0;
-    background: transparent;
   }
 </style>
 
 <script type="text/babel">
-  import Popup from 'el-popup';
-
   export default {
-    mixins: [ Popup ],
+    data() {
+      return {
+        visible: false
+      };
+    },
 
     props: {
-      text: String,
-      modal: {
-        type: Boolean,
-        default: true
-      },
-      closeOnClickModal: {
-        type: Boolean,
-        default: false
-      }
+      text: String
     }
   };
 </script>

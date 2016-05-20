@@ -4,6 +4,7 @@
   "description": "A mobile indicator component for vue.js",
   "main": "lib/index.js",
   "scripts": {
+    "dev": "cooking watch -c cooking.conf.js,cooking.example.conf.js",
     "build": "cooking build",
     "prepublish": "npm run build"
   },
@@ -14,7 +15,6 @@
   "author": "yi.shyang@ele.me",
   "license": "MIT",
   "dependencies": {
-    "el-popup": "0.0.3"
   },
   "bugs": {
     "url": "https://github.com/ElemeFE/vue-indicator/issues"
