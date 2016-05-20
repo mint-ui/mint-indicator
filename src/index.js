@@ -15,14 +15,14 @@ export default {
     instance.$appendTo(document.body);
 
     Vue.nextTick(() => {
-      instance.open();
+      instance.visible = true;
     });
   },
 
   close() {
     if (instance) {
       Vue.nextTick(() => {
-        instance.close();
+        instance.visible = false;
       });
     }
   }
