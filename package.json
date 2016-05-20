@@ -1,6 +1,6 @@
 {
   "name": "vue-indicator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A mobile indicator component for vue.js",
   "main": "lib/index.js",
   "scripts": {
@@ -14,8 +14,7 @@
   },
   "author": "yi.shyang@ele.me",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "bugs": {
     "url": "https://github.com/ElemeFE/vue-indicator/issues"
   },
