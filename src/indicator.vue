@@ -1,7 +1,7 @@
 <template>
   <div class="kebab-indicator" v-show="visible" transition="kebab-indicator" >
     <div class="kebab-indicator-wrapper" :style="{ 'padding': text ? '20px' : '10px' }">
-      <span class="kebab-indicator-spin"></span>
+      <kb-spinner class="kebab-indicator-spin" :type="convertedSpinnerType"></kb-spinner>
       <span class="kebab-indicator-text" v-show="text">{{ text }}</span>
     </div>
     <div class="kebab-indicator-mask"></div>
@@ -30,11 +30,7 @@
 
       @descendent spin {
         display: inline-block;
-        font-size: 0;
-        size: 40px;
-        background: url("loading.svg") center center no-repeat;
-        background-size: 100%;
-        animation: indicator-spin 1s steps(12,end) infinite;
+        text-align: center;
       }
 
       @descendent mask {
@@ -43,12 +39,6 @@
         opacity: 0;
         background: transparent;
       }
-    }
-  }
-
-  @keyframes indicator-spin {
-    100% {
-      transform: rotate(360deg);
     }
   }
 
@@ -70,8 +60,27 @@
       };
     },
 
+    computed: {
+      convertedSpinnerType() {
+        switch (this.spinnerType) {
+          case 'double-bounce':
+            return 1;
+          case 'triple-bounce':
+            return 2;
+          case 'fading-circle':
+            return 3;
+          default:
+            return 0;
+        }
+      }
+    },
+
     props: {
-      text: String
+      text: String,
+      spinnerType: {
+        type: String,
+        default: 'snake'
+      }
     }
   };
 </script>

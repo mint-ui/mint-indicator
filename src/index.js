@@ -3,15 +3,26 @@ import Vue from 'vue';
 const Indicator = Vue.extend(require('./indicator.vue'));
 let instance;
 
+import Spinner from 'kb-spinner';
+import 'kb-spinner/lib/all/style.css';
+
+Vue.use(Spinner);
+
 export default {
-  open(text) {
+  open(options) {
     if (!instance) {
       instance = new Indicator({
         el: document.createElement('div')
       });
     }
     if (instance.visible) return;
-    instance.text = text || '';
+    if (typeof options === 'string') {
+      instance.text = options;
+    }
+    if (typeof options === 'object') {
+      instance.text = options.text || '';
+      instance.spinnerType = options.spinnerType || 'snake';
+    }
     instance.$appendTo(document.body);
 
     Vue.nextTick(() => {
