@@ -1,7 +1,7 @@
 <template>
   <div class="kebab-indicator" v-show="visible" transition="kebab-indicator" >
-    <div class="kebab-indicator-wrapper" :style="{ 'padding': text ? '20px' : '10px' }">
-      <kb-spinner class="kebab-indicator-spin" :type="convertedSpinnerType"></kb-spinner>
+    <div class="kebab-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
+      <kb-spinner class="kebab-indicator-spin" :type="convertedSpinnerType" :size="32"></kb-spinner>
       <span class="kebab-indicator-text" v-show="text">{{ text }}</span>
     </div>
     <div class="kebab-indicator-mask"></div>
@@ -26,6 +26,7 @@
         color: #fff;
         text-align: center;
         margin-top: 10px;
+        font-size: 16px;
       }
 
       @descendent spin {

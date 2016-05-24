@@ -18,10 +18,13 @@ export default {
     if (instance.visible) return;
     if (typeof options === 'string') {
       instance.text = options;
-    }
-    if (typeof options === 'object') {
+      instance.spinnerType = 'snake';
+    } else if (typeof options === 'object') {
       instance.text = options.text || '';
       instance.spinnerType = options.spinnerType || 'snake';
+    } else {
+      instance.text = '';
+      instance.spinnerType = 'snake';
     }
     instance.$appendTo(document.body);
 
