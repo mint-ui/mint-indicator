@@ -14,7 +14,9 @@
   },
   "author": "yi.shyang@ele.me",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "kb-spinner": "^0.1.2"
+  },
   "bugs": {
     "url": "https://github.com/ElemeFE/vue-indicator/issues"
   },
