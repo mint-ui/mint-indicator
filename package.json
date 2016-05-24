@@ -1,6 +1,6 @@
 {
   "name": "vue-indicator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A mobile indicator component for vue.js",
   "main": "lib/index.js",
   "scripts": {
