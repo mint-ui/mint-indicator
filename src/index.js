@@ -19,7 +19,7 @@ export default {
     if (typeof options === 'string') {
       instance.text = options;
       instance.spinnerType = 'snake';
-    } else if (typeof options === 'object') {
+    } else if (Object.prototype.toString.call(options) === '[object Object]') {
       instance.text = options.text || '';
       instance.spinnerType = options.spinnerType || 'snake';
     } else {

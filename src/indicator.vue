@@ -1,15 +1,15 @@
 <template>
-  <div class="kebab-indicator" v-show="visible" transition="kebab-indicator" >
-    <div class="kebab-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
-      <kb-spinner class="kebab-indicator-spin" :type="convertedSpinnerType" :size="32"></kb-spinner>
-      <span class="kebab-indicator-text" v-show="text">{{ text }}</span>
+  <div class="mint-indicator" v-show="visible" transition="mint-indicator" >
+    <div class="mint-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
+      <kb-spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></kb-spinner>
+      <span class="mint-indicator-text" v-show="text">{{ text }}</span>
     </div>
-    <div class="kebab-indicator-mask"></div>
+    <div class="mint-indicator-mask"></div>
   </div>
 </template>
 
 <style>
-  @component-namespace kebab {
+  @component-namespace mint {
     @component indicator {
       @descendent wrapper {
         position: fixed 50% * * 50%;
@@ -43,12 +43,12 @@
     }
   }
 
-  .kebab-indicator-transition {
+  .mint-indicator-transition {
     transition: opacity .2s linear;
   }
 
-  .kebab-indicator-enter,
-  .kebab-indicator-leave {
+  .mint-indicator-enter,
+  .mint-indicator-leave {
     opacity: 0;
   }
 </style>
