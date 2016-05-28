@@ -3,8 +3,7 @@ import Vue from 'vue';
 const Indicator = Vue.extend(require('./indicator.vue'));
 let instance;
 
-import Spinner from 'kb-spinner';
-import 'kb-spinner/lib/all/style.css';
+import Spinner from 'mint-spinner';
 
 Vue.use(Spinner);
 

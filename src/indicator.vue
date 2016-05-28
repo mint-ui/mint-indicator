@@ -1,7 +1,7 @@
 <template>
   <div class="mint-indicator" v-show="visible" transition="mint-indicator" >
     <div class="mint-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
-      <kb-spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></kb-spinner>
+      <mt-spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></mt-spinner>
       <span class="mint-indicator-text" v-show="text">{{ text }}</span>
     </div>
     <div class="mint-indicator-mask"></div>
