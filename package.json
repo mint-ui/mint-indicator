@@ -15,10 +15,13 @@
   "author": "yi.shyang@ele.me",
   "license": "MIT",
   "dependencies": {
-    "kb-spinner": "^0.1.2"
+    "mint-spinner": "^0.1.9"
   },
   "bugs": {
     "url": "https://github.com/ElemeFE/vue-indicator/issues"
   },
-  "homepage": "https://github.com/ElemeFE/vue-indicator#readme"
+  "homepage": "https://github.com/ElemeFE/vue-indicator#readme",
+  "devDependencies": {
+    "babel-plugin-component": "^0.1.3"
+  }
 }
