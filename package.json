@@ -1,6 +1,6 @@
 {
-  "name": "vue-indicator",
-  "version": "0.0.7",
+  "name": "mint-indicator",
+  "version": "0.0.1",
   "description": "A mobile indicator component for vue.js",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:ElemeFE/vue-indicator.git"
+    "url": "git+ssh://git@github.com:mint-ui/mint-indicator.git"
   },
   "author": "yi.shyang@ele.me",
   "license": "MIT",
@@ -18,9 +18,9 @@
     "mint-spinner": "^0.1.9"
   },
   "bugs": {
-    "url": "https://github.com/ElemeFE/vue-indicator/issues"
+    "url": "https://github.com/mint-ui/mint-indicator/issues"
   },
-  "homepage": "https://github.com/ElemeFE/vue-indicator#readme",
+  "homepage": "https://github.com/mint-ui/mint-indicator#readme",
   "devDependencies": {
     "babel-plugin-component": "^0.1.3"
   }
