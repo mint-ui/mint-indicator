@@ -1,6 +1,6 @@
 {
   "name": "mint-indicator",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "description": "A mobile indicator component for vue.js",
   "main": "lib/index.js",
   "scripts": {
