@@ -1,16 +1,20 @@
 <template>
-  <div class="mint-indicator" v-show="visible" transition="mint-indicator" >
-    <div class="mint-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
-      <mt-spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></mt-spinner>
-      <span class="mint-indicator-text" v-show="text">{{ text }}</span>
+  <transition name="mint-indicator">
+    <div class="mint-indicator" v-show="visible">
+      <div class="mint-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
+        <spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></spinner>
+        <span class="mint-indicator-text" v-show="text">{{ text }}</span>
+      </div>
+      <div class="mint-indicator-mask" @touchmove.stop.prevent></div>
     </div>
-    <div class="mint-indicator-mask"></div>
-  </div>
+  </transition>
 </template>
 
 <style>
   @component-namespace mint {
     @component indicator {
+      transition: opacity .2s linear;
+
       @descendent wrapper {
         position: fixed 50% * * 50%;
         transform: translate(-50%, -50%);
@@ -43,22 +47,24 @@
     }
   }
 
-  .mint-indicator-transition {
-    transition: opacity .2s linear;
-  }
-
   .mint-indicator-enter,
-  .mint-indicator-leave {
+  .mint-indicator-leave-active {
     opacity: 0;
   }
 </style>
 
 <script type="text/babel">
+  import Spinner from 'mint-spinner/lib/index';
+
   export default {
     data() {
       return {
         visible: false
       };
+    },
+
+    components: {
+      Spinner
     },
 
     computed: {

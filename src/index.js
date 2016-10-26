@@ -1,31 +1,24 @@
 import Vue from 'vue';
+import 'mint-spinner/lib/style.css';
 
 const Indicator = Vue.extend(require('./indicator.vue'));
 let instance;
+let timer;
 
-import Spinner from 'mint-spinner';
-
-Vue.use(Spinner);
-
-export default {
-  open(options) {
+module.exports = {
+  open(options = {}) {
     if (!instance) {
       instance = new Indicator({
         el: document.createElement('div')
       });
     }
     if (instance.visible) return;
-    if (typeof options === 'string') {
-      instance.text = options;
-      instance.spinnerType = 'snake';
-    } else if (Object.prototype.toString.call(options) === '[object Object]') {
-      instance.text = options.text || '';
-      instance.spinnerType = options.spinnerType || 'snake';
-    } else {
-      instance.text = '';
-      instance.spinnerType = 'snake';
+    instance.text = typeof options === 'string' ? options : options.text || '';
+    instance.spinnerType = options.spinnerType || 'snake';
+    document.body.appendChild(instance.$el);
+    if (timer) {
+      clearTimeout(timer);
     }
-    instance.$appendTo(document.body);
 
     Vue.nextTick(() => {
       instance.visible = true;
@@ -36,6 +29,11 @@ export default {
     if (instance) {
       Vue.nextTick(() => {
         instance.visible = false;
+        timer = setTimeout(() => {
+          if (instance.$el) {
+            instance.$el.style.display = 'none';
+          }
+        }, 400);
       });
     }
   }

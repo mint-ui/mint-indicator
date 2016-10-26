@@ -15,13 +15,15 @@
   "author": "yi.shyang@ele.me",
   "license": "MIT",
   "dependencies": {
-    "mint-spinner": "^0.1.9"
+    "mint-spinner": "^2.0.0"
   },
   "bugs": {
     "url": "https://github.com/mint-ui/mint-indicator/issues"
   },
   "homepage": "https://github.com/mint-ui/mint-indicator#readme",
   "devDependencies": {
-    "babel-plugin-component": "^0.1.3"
+    "babel-plugin-component": "^0.1.3",
+    "cooking-vue2": "^0.2.3",
+    "vue": "^2.0.2"
   }
 }
